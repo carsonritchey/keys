@@ -12,8 +12,8 @@ int main(void) {
     while(!WindowShouldClose()) {
         BeginDrawing();
 
-        ClearBackground(RAYWHITE);
-        DrawText("omg it works", x, y, 70, LIGHTGRAY);
+        ClearBackground((struct Color){255, 255, 255, 255});
+        DrawText("omg it works", x, y, 70, (struct Color){150, 150, 150, 255});
 
         if(IsKeyDown(KEY_LEFT)) x -= 5;
         if(IsKeyDown(KEY_RIGHT)) x += 5;

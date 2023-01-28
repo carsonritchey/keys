@@ -24,7 +24,7 @@ endif()
 # actual code
 project(${PROJECT_NAME} VERSION 1.0)
 
-file(GLOB_RECURSE SRC_FILES src/*.c)
+file(GLOB_RECURSE SRC_FILES src/*.cpp)
 add_executable(${PROJECT_NAME} ${SRC_FILES})
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_link_libraries(${PROJECT_NAME} raylib)
