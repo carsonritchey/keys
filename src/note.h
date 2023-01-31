@@ -3,20 +3,26 @@
 
 #include "raylib.h"
 
-enum Type { a, s, d, f, h, j, k, l };
+namespace note {
+    enum Type { a, s, d, f, h, j, k, l };
+}
 
 class Note {
     public:
-        Note(int _x, int _y, Type _type);
+        Note(int _x, int _y, note::Type _type);
         ~Note();
 
-        Type type;
-        int x, y;
+        note::Type type;
+        Vector2 pos;
+        Vector2 endPos;
 
-        Texture2D sprite;
+        float rotation, scale;
+        Color tint;
+
+        Texture2D texture;
 
         void draw();
         void tick();
 };
 
-#endif 
+#endif
