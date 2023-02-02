@@ -16,6 +16,8 @@ void Game::update() {
 void Game::render() {
     BeginDrawing();
 
+    DrawFPS(0, 0);
+
     ClearBackground((struct Color){255, 255, 255, 255});
     DrawText("sdkfjsdfjn", 10, 10, 70, (struct Color){150, 150, 150, 255});
 

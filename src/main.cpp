@@ -4,17 +4,26 @@
 #include "game.h"
 #include "note.h"
 
+#include <vector>
+
 int main(void) {
     Game game;
 
-    Note note(50, 100, note::a);
+    std::vector<Note> notes;
+
+    notes.push_back(Note(50, 100, note::a));
+    notes.push_back(Note(50, 140, note::d));
+    notes.push_back(Note(50, 180, note::f));
 
     while(game.running) {
         game.update();
         game.render();
 
-        note.tick();
-        note.draw();
+        for(Note n : notes) {
+            n.tick();
+            n.draw();
+        }
+
     }
     
     return 0;

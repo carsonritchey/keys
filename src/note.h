@@ -9,14 +9,14 @@ namespace note {
 
 class Note {
     public:
-        Note(int _x, int _y, note::Type _type);
+        Note(float _x, float _y, note::Type _type);
         ~Note();
 
         note::Type type;
         Vector2 pos;
         Vector2 endPos;
 
-        float rotation, scale;
+        static inline float rotation, scale;
         Color tint;
 
         Texture2D texture;

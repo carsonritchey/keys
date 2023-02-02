@@ -1,6 +1,7 @@
 #include "note.h"
+#include "config.h"
 
-Note::Note(int _x, int _y, note::Type _type) {
+Note::Note(float _x, float _y, note::Type _type) {
     pos = (struct Vector2){_x, _y};
     type = _type;
 
@@ -13,11 +14,16 @@ Note::Note(int _x, int _y, note::Type _type) {
         case note::a:
             texture = LoadTexture("img/a.png");
             break;
+        case note::d:
+            texture = LoadTexture("img/d.png");
+            break;
+        case note::f:
+            texture = LoadTexture("img/f.png");
+            break;
     }
 }
 
 Note::~Note() {
-    UnloadTexture(texture);
 }
 
 void Note::draw() {
